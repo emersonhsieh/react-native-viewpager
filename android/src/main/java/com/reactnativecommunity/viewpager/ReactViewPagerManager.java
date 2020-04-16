@@ -133,8 +133,8 @@ public class ReactViewPagerManager extends ViewGroupManager<ViewPager2> {
 
     @Override
     public void removeAllViews(ViewPager2 parent) {
-        reactChildrenViews.clear();
-        ((FragmentAdapter) parent.getAdapter()).removeAll();
+        // Fast refresh does dont work, when super is called
+        // Fast refresh calls removeAllViews, once view has been added
     }
 
     @Override
